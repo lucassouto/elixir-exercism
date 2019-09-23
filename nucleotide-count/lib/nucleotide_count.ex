@@ -14,13 +14,7 @@ defmodule NucleotideCount do
   """
   @spec count([char], char) :: non_neg_integer
   def count(strand, nucleotide) do
-    nucleotide_count = NucleotideCount.histogram(strand)[nucleotide]
-
-    if nucleotide_count do
-      nucleotide_count
-    else
-      0
-    end
+    NucleotideCount.histogram(strand)[nucleotide]
   end
 
   @doc """
